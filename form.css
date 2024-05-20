@@ -1,0 +1,13 @@
+body{
+    margin: 0 auto;
+    font-family: sans-serif;
+    background-color: wheat;
+}
+
+form{
+    width: 100%;
+}
+
+legend{
+    text-align: center;
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Halaman Biodata</title>
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            background-color: rgb(237, 229, 214);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            max-width: 100%;
+            padding: 20px;
+            width: auto;
+            background-color: transparent; 
+            box-shadow: none; 
+            border-radius: 0; 
+            font-size: 24px;
+            color: rgb(255, 202, 104);
+        }
+
+        fieldset {
+            border: none;
+            padding: 0;
+            width: 1500px;
+        }
+
+        legend {
+            font-family: 'Helvetica', sans-serif;
+            font-size: 24px;
+            color: rgb(237, 229, 214);
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 5px 10px;
+            width: fit-content;
+            margin: 0 auto 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="alamat"],
+        input[type="agama"],
+        input[type="pekerjaan"],
+        input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid rgb(237, 229, 214);
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: 'Helvetica', sans-serif;
+        }
+
+        input[type="submit"] {
+            background-color:rgb(237, 229, 214);
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-family: 'Helvetica', sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .back-button {
+            display: block;
+            width: 120px;
+            margin: 20px auto;
+            background-color: rgb(237, 229, 214);
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-family: 'Helvetica', sans-serif;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        body {
+            background-image: url('bg.jpeg');
+            background-size: cover;
+        }
+        
+        .gender-options {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 24px;
+            color: black;
+        }
+        
+        .gender-options input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid black;
+            display: inline-block;
+            position: relative;
+            margin-right: 10px;
+            font-size: 24px;
+            color: black;
+        }
+        
+        .gender-options input[type="radio"]:checked::before {
+            content: "";
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 12px;
+            height: 12px;
+            background-color:black;
+            border-radius: 50%;
+            font-size: 24px;
+            color: black;
+        }
+    </style>
+    <script>
+        function showNotification() {
+            var nama = document.getElementsByName("nama")[0].value;
+            var alamat = document.getElementsByName("alamat")[0].value;
+            var agama = document.getElementsByName("agama")[0].value;
+            var pekerjaan = document.getElementsByName("pekerjaan")[0].value;
+            var jk = document.querySelector('input[name="jk"]:checked').value;
+            var tanggal = document.getElementById("date").value;
+
+            var message = "Biodata telah disubmit!\n\n" +
+                "Nama Lengkap: " + nama + "\n" +
+                "Alamat: " + alamat + "\n" +
+                "Agama: " + agama + "\n" +
+                "Pekerjaan: " + pekerjaan + "\n" +
+                "Jenis Kelamin: " + jk + "\n" +
+                "Tanggal Lahir: " + tanggal;
+
+            alert(message);
+        }
+    </script>
+    <meta charset="utf-8">
+</head>
+<body>
+    <div class="form-container">
+        <form onsubmit="showNotification()">
+            <fieldset>
+                <legend><div style="border: 1px solid rgb(251, 248, 248); border-radius: 50px; padding: 10px;">Biodata Saya</div></legend>
+
+                <p>Nama Lengkap: <input type="text" name="nama"></p>
+                <p>Alamat: <input type="alamat" name="alamat"></p>
+                <p>Agama: <input type="agama" name="agama"></p>
+                <p>Pekerjaan: <input type="pekerjaan" name="pekerjaan"></p>
+                <p>Jenis Kelamin:</p>
+                <p class="gender-options">
+                    <input type="radio" name="jk" value="laki-laki"/> Laki-Laki
+                    <input type="radio" name="jk" value="perempuan" checked/> Perempuan
+                </p>
+                <p>Tanggal Lahir: <br><input type="date" name="tanggal" id="date"/></p>
+                <p><input type="submit" value="Submit"></p>
+            </fieldset>
+        </form>
+        <button class="back-button"><a href="index.html">BACK</a></button>
+    </div>
+    
+</body>
+</html>
